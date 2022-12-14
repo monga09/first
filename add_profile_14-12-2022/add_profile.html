@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="google-site-verification" content="UUjLmm5RDhmuCWAKv4jIGeMQvwuttg4-X_lHjDObOJo" />
+	<title>WhiteHax Lite</title>
+
+
+
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+	<!-- RTL support - for demo only -->
+	<script src="js/demo-rtl.js"></script>
+
+	<!-- libraries -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- global styles -->
+	<link rel="stylesheet" type="text/css" href="css/theme_styles.css" />
+	<link rel="stylesheet" href="css/morris.css" type="text/css" />
+
+
+	<!-- this page specific styles -->
+	<link rel="stylesheet" href="css/daterangepicker.css" type="text/css" />
+	<link rel="stylesheet" href="css/jquery-jvectormap-1.2.2.css" type="text/css" />
+	<link rel="stylesheet" href="css/weather-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/select2.css" type="text/css" />
+
+	<!-- Favicon -->
+	<link type="image/x-icon" href="/static/whlite/img/favicon.ico" rel="shortcut icon" />
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery.nanoscroller.min.js"></script>
+	<style>
+		.p_img121 {
+			display: block;
+			text-align: center;
+		}
+
+		.p_box121 {
+			text-align: center;
+			font-size: 17px;
+		}
+
+		.bs1 {
+			box-shadow: 0 15px 15px -15px #2c3e50;
+		}
+
+		.br10 {
+			border-radius: 10px;
+		}
+
+		a.btn.white_new {
+			background: #fff;
+		}
+
+		.text_center {
+			text-align: center;
+		}
+
+		svg {
+			left: 4% !important;
+		}
+
+		.device_circle {
+			height: 101px;
+			width: 41%;
+			margin: 32px auto;
+			background: white;
+			border-radius: 60px;
+			border: 3px solid red;
+			font-size: 35px;
+			padding: 20px 0;
+		}
+
+		.border_green {
+			border: 3px solid green;
+		}
+
+		.head1 {
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			border-bottom: 1px solid #efefef;
+			padding: 20px;
+		}
+
+
+
+		body {
+			background-color: #ffffff;
+			color: #444444;
+			font-family: 'Roboto', sans-serif;
+			font-size: 16px;
+			font-weight: 300;
+			margin: 0;
+			padding: 0;
+		}
+
+		.wizard-content-left {
+			background-blend-mode: darken;
+			background-color: rgba(0, 0, 0, 0.45);
+			background-image: url("https://i.ibb.co/X292hJF/form-wizard-bg-2.jpg");
+			background-position: center center;
+			background-size: cover;
+			height: 100vh;
+			padding: 30px;
+		}
+
+		.wizard-content-left h1 {
+			color: #ffffff;
+			font-size: 38px;
+			font-weight: 600;
+			padding: 12px 20px;
+			text-align: center;
+		}
+
+		.form-wizard {
+			color: #000;
+			padding: 30px;
+		}
+
+		.form-wizard .wizard-form-radio {
+			display: inline-block;
+			margin-left: 5px;
+			position: relative;
+		}
+
+		.form-wizard .wizard-form-radio input[type="radio"] {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			-ms-appearance: none;
+			-o-appearance: none;
+			appearance: none;
+			background-color: #dddddd;
+			height: 25px;
+			width: 25px;
+			display: inline-block;
+			vertical-align: middle;
+			border-radius: 50%;
+			position: relative;
+			cursor: pointer;
+		}
+
+		.form-wizard .wizard-form-radio input[type="radio"]:focus {
+			outline: 0;
+		}
+
+		.form-wizard .wizard-form-radio input[type="radio"]:checked {
+			background-color: #fb1647;
+		}
+
+		.form-wizard .wizard-form-radio input[type="radio"]:checked::before {
+			content: "";
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			background-color: #ffffff;
+			border-radius: 50%;
+			left: 1px;
+			right: 0;
+			margin: 0 auto;
+			top: 8px;
+		}
+
+		.form-wizard .wizard-form-radio input[type="radio"]:checked::after {
+			content: "";
+			display: inline-block;
+			webkit-animation: click-radio-wave 0.65s;
+			-moz-animation: click-radio-wave 0.65s;
+			animation: click-radio-wave 0.65s;
+			background: #000000;
+			content: '';
+			display: block;
+			position: relative;
+			z-index: 100;
+			border-radius: 50%;
+		}
+
+		.form-wizard .wizard-form-radio input[type="radio"]~label {
+			padding-left: 10px;
+			cursor: pointer;
+		}
+
+		.form-wizard .form-wizard-header {
+			text-align: center;
+		}
+
+		.form-wizard .form-wizard-next-btn,
+		.form-wizard .form-wizard-previous-btn,
+		.form-wizard .form-wizard-submit {
+			background-color: #4FAAF7;
+			color: #ffffff;
+			display: inline-block;
+			min-width: 100px;
+			min-width: 120px;
+			padding: 10px;
+			text-align: center;
+		}
+
+		.form-wizard .form-wizard-next-btn:hover,
+		.form-wizard .form-wizard-next-btn:focus,
+		.form-wizard .form-wizard-previous-btn:hover,
+		.form-wizard .form-wizard-previous-btn:focus,
+		.form-wizard .form-wizard-submit:hover,
+		.form-wizard .form-wizard-submit:focus {
+			color: #ffffff;
+			opacity: 0.6;
+			text-decoration: none;
+		}
+
+		.form-wizard .wizard-fieldset {
+			display: none;
+		}
+
+		.form-wizard .wizard-fieldset.show {
+			display: block;
+		}
+
+		.form-wizard .wizard-form-error {
+			display: none;
+			background-color: #d70b0b;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 2px;
+			width: 100%;
+		}
+
+		.form-wizard .form-wizard-previous-btn {
+			background-color: #fb1647;
+		}
+
+		.form-wizard .form-control {
+			font-weight: 300;
+			height: auto !important;
+			padding: 15px;
+			color: #888888;
+			background-color: #f1f1f1;
+			border: none;
+		}
+
+		.form-wizard .form-control:focus {
+			box-shadow: none;
+		}
+
+		.form-wizard .form-group {
+			position: relative;
+			margin: 25px 0;
+			text-align: center;
+		}
+
+		.form-wizard .wizard-form-text-label {
+			position: absolute;
+			left: 10px;
+			top: 16px;
+			transition: 0.2s linear all;
+		}
+
+		.form-wizard .focus-input .wizard-form-text-label {
+			color: #d65470;
+			top: -18px;
+			transition: 0.2s linear all;
+			font-size: 12px;
+		}
+
+		.form-wizard .form-wizard-steps {
+			margin: 30px 0;
+		}
+
+		.form-wizard .form-wizard-steps li {
+			width: 25%;
+			float: left;
+			position: relative;
+		}
+
+		.form-wizard .form-wizard-steps li::after {
+			background-color: #f3f3f3;
+			content: "";
+			height: 5px;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			border-bottom: 1px solid #dddddd;
+			border-top: 1px solid #dddddd;
+		}
+
+		.form-wizard .form-wizard-steps li span {
+			background-color: #dddddd;
+			border-radius: 50%;
+			display: inline-block;
+			height: 40px;
+			line-height: 40px;
+			position: relative;
+			text-align: center;
+			width: 40px;
+			z-index: 1;
+		}
+
+		.form-wizard .form-wizard-steps li:last-child::after {
+			width: 50%;
+		}
+
+		.form-wizard .form-wizard-steps li.active span,
+		.form-wizard .form-wizard-steps li.activated span {
+			background-color: #4FAAF7;
+			color: #ffffff;
+		}
+
+		.form-wizard .form-wizard-steps li.active::after,
+		.form-wizard .form-wizard-steps li.activated::after {
+			background-color: #4FAAF7;
+			left: 50%;
+			width: 50%;
+			border-color: #4FAAF7;
+		}
+
+		.form-wizard .form-wizard-steps li.activated::after {
+			width: 100%;
+			border-color: #4FAAF7;
+		}
+
+		.form-wizard .form-wizard-steps li:last-child::after {
+			left: 0;
+		}
+
+		.form-wizard .wizard-password-eye {
+			position: absolute;
+			right: 32px;
+			top: 50%;
+			transform: translateY(-50%);
+			cursor: pointer;
+		}
+
+		@keyframes click-radio-wave {
+			0% {
+				width: 25px;
+				height: 25px;
+				opacity: 0.35;
+				position: relative;
+			}
+
+			100% {
+				width: 60px;
+				height: 60px;
+				margin-left: -15px;
+				margin-top: -15px;
+				opacity: 0.0;
+			}
+		}
+
+		@media screen and (max-width: 767px) {
+			.wizard-content-left {
+				height: auto;
+			}
+		}
+
+
+		.bold1 {
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.smtext {
+			font-size: 13px;
+			font-style: italic;
+		}
+
+		.json_data {
+			background: #fff;
+			border-bottom: 1px solid #efefef;
+			padding: 20px;
+			font-size: 13px;
+			text-align: center;
+		}
+	</style>
+
+</head>
+
+
+<body class="pace-done theme-whbl">
+	<div id="theme-wrapper">
+		<header class="navbar" id="header-navbar" style="height:80px">
+			<div class="container">
+				<a href="/whlite/main.html" id="logo" class="navbar-brand">
+					<!--					<img src="/static/whlite/img/logo1.png" alt="" class="normal-logo logo-white"/>-->
+					<!--					<img src="/static/whlite/img/None" alt="" class="normal-logo logo-white"/>-->
+					<label style="font-size:40px;color: #fff;margin-top: 20px;">White</label><label
+						style="font-size:40px;color: #ff0000;margin-top: 6px;">HaX</label>
+				</a>
+				<div class="clearfix">
+					<button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse"
+						type="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="fa fa-bars"></span>
+					</button>
+
+					<a href="/whlite/main.html" id="logo" class="center-brand-logo">
+						<img src="/static/whlite/img/None" alt="" class="normal-logo logo-white" style="height:55px" />
+					</a>
+					<div class="nav-no-collapse navbar-left pull-left hidden-sm hidden-xs">
+						<ul class="nav navbar-nav pull-left">
+							<li>
+								<a class="btn" id="make-small-nav">
+									<i class="fa fa-bars" style="margin-top:8px; font-size: 2.5em;"></i>
+								</a>
+							</li>
+
+						</ul>
+					</div>
+
+					<!--					<div class="nav-no-collapse  hidden-sm hidden-xs center-block" >-->
+					<!--						<ul class="nav navbar-nav ">-->
+					<!--							<li class="hidden-xxs" id=''  style='' >-->
+
+
+
+					<!--							</li>-->
+					<!--						</ul>-->
+					<!--					</div>-->
+
+
+					<div class="nav-no-collapse pull-right" id="header-nav">
+						<ul class="nav navbar-nav pull-right">
+							<li class="hidden-xxs" id='wiz'>
+								<!--							<a href="/whlite/simulation.html" class="table-link" title='Execution Wizard'>-->
+								<!--								<i class="fa fa-play"></i>-->
+								<!--							</a>-->
+							</li>
+
+							<li class="hidden-xxs" id='disc' style='display:none'>
+								<a href="/whlite/discovery.html" class="table-link" title='Discover'>
+									<i class="fa fa-search"></i>
+								</a>
+							</li>
+
+
+
+							<li class="hidden-xxs" id='curScan' style='display:none'>
+								<a href="/whlite/currentscan.html" class="table-link" title='Current Execution'>
+									<i class="fa fa-spinner"></i>
+								</a>
+							</li>
+							<li class="hidden-xxs" id='repscan'>
+								<!--							<a href="/whlite/rerunscan.html" onclick='addWait();' class="table-link" title='Repeat Last Simulation-Run'>-->
+								<!--								<i class="fa fa-repeat"></i>-->
+								<!--							</a>-->
+							</li>
+							<li class="hidden-xxs" id='report' style="display: none">
+								<a href="/whlite/lastscanreport.html" class="table-link"
+									title='Last Simulation-Run Report'>
+									<i class="fa fa-file-text"></i>
+								</a>
+							</li>
+							<li class="hidden-xxs" id='cust' style='display:none'>
+								<a href="/whlite/customize.html" class="table-link" title='Customize'>
+									<i class="fa fa-ellipsis-h"></i>
+								</a>
+							</li>
+							<li class="dropdown profile-dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"
+									style="background-color:transparent">
+									<span id='uname'><i class="fa fa-user"
+											style="margin-top:18px; font-size: 2.2em;"></i><b class="caret"></b></span>
+
+								</a>
+								<ul class="dropdown-menu dropdown-menu-right" style='min-width:100px'>
+									<li><a href="/whlite/changepassword.html"><i class="fa fa-edit"></i>Change
+											Password</a></li>
+									<li><a href="/whlite/logout.html"><i class="fa fa-power-off"></i>Logout </a></li>
+								</ul>
+
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div id="page-wrapper" class="container nav-small" style="background-color:#eeeef1">
+			<!--style="background:url(/static/whlite/img/Whitehax_bg.jpg) no-repeat center center fixed" > -->
+
+
+
+			<div class="row">
+				<div id="nav-col" style="background:transparent">
+					<section id="col-left" class="col-left-nano">
+						<div id="col-left-inner" class="col-left-nano-content">
+
+							<div class="collapse navbar-collapse navbar-ex1-collapse" id="sidebar-nav">
+								<ul class="nav nav-pills nav-stacked side_nav">
+									<li class="nav-header nav-header-first hidden-sm hidden-xs">
+									</li>
+
+									<li>
+										<a href="#">
+											<i class="fa fa-dashboard"></i>
+											<span>Home</span>
+										</a>
+									</li>
+
+									<li style="">
+										<a href="/whlite/devicesreport.html">
+											<i class="fa fa-laptop"></i>
+											<span>Devices </span>
+										</a>
+									</li>
+
+
+									<li style="">
+										<a href="#">
+											<i class="fa fa-list"></i>
+											<span>Profiles</span>
+										</a>
+									</li>
+
+
+									<li style="">
+										<a href="#">
+											<i class="fa fa-group"></i>
+
+											<span style="">Groups</span>
+										</a>
+									</li>
+
+
+									<li style="">
+										<a href="#">
+											<i class="fa fa-files-o"></i>
+											<span>Reports </span>
+										</a>
+									</li>
+
+
+
+									<!-- <li style="">
+										<a href="#">
+										
+											<img src = "img/phishing.png" width="18" height="18">
+											<span style="margin-left:7%;">Phishing Sim.</span>
+												</a>
+									</li> -->
+
+
+
+									<li style="">
+										<a href="/whlite/help.html">
+											<i class="fa fa-wrench"></i>
+											<span>Debug</span>
+										</a>
+									</li>
+
+
+
+
+
+									<br>
+
+								</ul>
+							</div>
+						</div>
+					</section>
+					<div id="nav-col-submenu"></div>
+				</div>
+
+				<div id="content-wrapper" style="background:transparent; min-height: 1100px;">
+
+					<div class="col-lg-12">
+						<div class="row">
+							<div class="col-lg-12">
+								<div id="content-header" class="clearfix">
+									<div class="text_center">
+										<!-- 	<ol class="breadcrumb">
+								<li><a href="#">Home</a></li>
+								<li class="active"><span>Phishing Simulation</span></li>
+							</ol> -->
+
+										<h1>New Profile</h1>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="errorDiv" style="display:none">
+							<div class="alert alert-danger" role="alert"></div>
+						</div>
+
+						<div class="row">
+							<!-- <div class="col-md-3">
+                                    <div class="panel panel-default panelStyle" style="height:221px;">
+                                        <div class="panel-body">
+                                            <h5><b>Test Details</b></h5>
+                                            <p><b>Total Test</b> : 9</p>
+                                            <p><b>Failed Tests</b> : 1</p>
+                                            <p><b>Passed Tests</b> : 8</p>
+                                            <p><b>Operating System</b> : Windows-10</p>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+ -->
+
+
+
+
+
+
+
+
+
+							<!-- <div class="col-md-3">
+                                    <div class="panel panel-default panelStyle">
+                                        <div class="panel-body">
+                                            <h5><b>Phishing Quiz Readiness</b> <i class="fa fa-info-circle help_icon" aria-hidden="true" title="Web Readiness is a measure of Web related security, controls and policies. The overall readiness score under 35% is considered low and has a high risk of potential breach thru Web-based attacks; 35% to 65% is considered medium risk and above 65% is considered a good score, with the higher number being better for Web-based threats."></i></h5>
+                                            <div id="web_security"><svg height="100%" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; left: -0.75px; top: -0.28125px;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.4</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><filter id="inner-shadow-web_security"><feOffset dx="0" dy="3"></feOffset><feGaussianBlur result="offset-blur" stdDeviation="5"></feGaussianBlur><feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"></feComposite><feFlood flood-color="black" flood-opacity="0.2" result="color"></feFlood><feComposite operator="in" in="color" in2="inverse" result="shadow"></feComposite><feComposite operator="over" in="shadow" in2="SourceGraphic"></feComposite></filter></defs><path fill="#edebeb" stroke="none" d="M150.6875,124L121.625,124A77.5,77.5,0,0,1,276.625,124L247.5625,124A48.4375,48.4375,0,0,0,150.6875,124Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" filter="url(#inner-shadow-web_security)"></path><path fill="#00a000" stroke="none" d="M150.6875,124L121.625,124A77.5,77.5,0,0,1,276.625,124L247.5625,124A48.4375,48.4375,0,0,0,150.6875,124Z" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" filter="url(#inner-shadow-web_security)"></path><text x="199.125" y="24.21875" text-anchor="middle" font-family="sans-serif" font-size="15px" stroke="none" fill="#999999" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 15px; font-weight: bold; fill-opacity: 1;" font-weight="bold" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><text x="199.125" y="121.5686274509804" text-anchor="middle" font-family="Arial" font-size="23px" stroke="none" fill="#010101" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 23px; font-weight: bold; fill-opacity: 1;" font-weight="bold" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">100</tspan></text><text x="199.125" y="138.49170437405732" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 1;" font-weight="normal" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></tspan></text><text x="136.15625" y="138.49170437405732" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 1;" font-weight="normal" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><text x="262.09375" y="138.49170437405732" text-anchor="middle" font-family="Arial" font-size="10px" stroke="none" fill="#b3b3b3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: Arial; font-size: 10px; font-weight: normal; fill-opacity: 1;" font-weight="normal" fill-opacity="1"><tspan dy="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">100</tspan></text></svg></div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+						</div>
+
+
+
+
+
+
+
+
+						<div class="col-lg-6 6  col-lg-offset-3">
+							<div class="main-box clearfix" style="background-color:#fff; padding:30px 0;">
+
+
+								<div class="form-wizard">
+									<form name="forms" id="forms">
+										<div class="form-wizard-header">
+											<p>Fill all form field to go next step</p>
+											<ul class="list-unstyled form-wizard-steps clearfix">
+												<li class="active"><span>1</span></li>
+												<li><span>2</span></li>
+												<li><span>3</span></li>
+												<li><span>4</span></li>
+											</ul>
+										</div>
+										<fieldset class="wizard-fieldset show">
+											<h5 class="bold1">New Profile</h5>
+											<div class="form-group">
+												<input type="text" class="form-control wizard-required" id="profileName"
+													name="profileName">
+												<label for="profileName" class="wizard-form-text-label">Profile
+													Name</label>
+												<div class="wizard-form-error" style="display: block;"></div>
+											</div>
+
+											<div class="form-group">
+												Periodic Notification
+												<div class="wizard-form-radio">
+													<input name="periodicNotification" id="radio1" type="radio"
+														value="ON">
+													<label for="radio1" for="salutation-on">ON</label>
+												</div>
+												<div class="wizard-form-radio">
+													<input name="periodicNotification" id="radio2" type="radio"
+														value="OFF">
+													<label for="radio2" for="salutation-off">OFF</label>
+												</div>
+											</div>
+											<div class="form-group">
+												Repeat
+												<div class="wizard-form-radio">
+													<input name="periodicRepeat" id="radio1" type="radio"
+														value="Hourly">
+													<label for="radio1">Hourly</label>
+												</div>
+												<div class="wizard-form-radio">
+													<input name="periodicRepeat" id="radio2" type="radio" value="Fixed">
+													<label for="radio2">Fixed Time</label>
+												</div>
+											</div>
+
+											<div class="form-group">
+												Select Time
+												<div class="wizard-form-radio">
+													<input type="time" id="appt" name="periodicTime">
+
+												</div>
+
+											</div>
+
+
+
+											<div class="form-group clearfix">
+												<a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+											</div>
+										</fieldset>
+
+
+
+										<fieldset class="wizard-fieldset">
+											<h5 class="bold1">Smart Device Scan</h5>
+											<div class="form-group">
+												Show Notifications
+												<div class="wizard-form-radio">
+													<input name="smartdNotification" id="radio1" type="radio"
+														value="ON">
+													<label for="radio1">ON</label>
+												</div>
+												<div class="wizard-form-radio">
+													<input name="smartdNotification" id="radio2" type="radio"
+														value="OFF">
+													<label for="radio2">OFF</label>
+												</div>
+											</div>
+											<div class="form-group">
+												Repeat
+												<div class="wizard-form-radio">
+													<input name="smartdRepeat" id="radio1" type="radio" value="Hourly">
+													<label for="radio1">Hourly</label>
+												</div>
+												<div class="wizard-form-radio">
+													<input name="smartdRepeat" id="radio2" type="radio" value="Fixed">
+													<label for="radio2">Fixed Time</label>
+												</div>
+											</div>
+											<div class="form-group">
+												Select Time
+												<div class="wizard-form-radio">
+													<input type="time" id="appt" name="smartdTime">
+
+												</div>
+
+											</div>
+
+
+
+
+											<div class="form-group clearfix">
+												<a href="javascript:;"
+													class="form-wizard-previous-btn float-left">Previous</a>
+												<a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+											</div>
+										</fieldset>
+										<fieldset class="wizard-fieldset">
+											<h5 class="bold1">Active Protection</h5>
+											<div class="form-group">
+												VPN Manager <span class="smtext">(When turned on, the CyberSafe VPN will
+													automatically be turned on when the managed device is on a new WiFi
+													network.)</span>
+												<br />
+												<div class="wizard-form-radio">
+													<input name="vpnManager" id="radio1" type="radio" value="ON">
+													<label for="radio1">ON</label>
+												</div>
+												<div class="wizard-form-radio">
+													<input name="vpnManager" id="radio2" type="radio" value="OFF">
+													<label for="radio2"> OFF</label>
+												</div>
+											</div>
+
+
+											<div class="form-group">
+												Phishing Filter <span class="smtext">(Enforce the Phishing Filter on a
+													managed device.)</span>
+												<br />
+												<div class="wizard-form-radio">
+													<input name="phishingFilter" id="radio1" type="radio" value="ON">
+													<label for="radio1">ON</label>
+												</div>
+												<div class="wizard-form-radio">
+													<input name="phishingFilter" id="radio2" type="radio" value="OFF">
+													<label for="radio2"> OFF</label>
+												</div>
+											</div>
+
+											<div class="form-group clearfix">
+												<a href="javascript:;"
+													class="form-wizard-previous-btn float-left">Previous</a>
+												<a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+											</div>
+
+
+										</fieldset>
+										<fieldset class="wizard-fieldset">
+											<h5 class="bold1">User Interaction</h5>
+											<div class="form-group">
+												Allow User Interaction
+												<div class="wizard-form-radio">
+													<input name="useInteraction" id="radio1" type="radio" value="ON">
+													<label for="radio1">ON</label>
+												</div>
+												<div class="wizard-form-radio">
+													<input name="useInteraction" id="radio2" type="radio" value="OFF">
+													<label for="radio2"> OFF</label>
+												</div>
+											</div>
+
+											<div class="form-group">
+												Family Protect (Enforce the Family Protection on a managed device.)
+												<div class="wizard-form-radio">
+													<input name="familyProtect" id="radio1" type="radio" value="ON">
+													<label for="radio1">ON</label>
+												</div>
+												<div class="wizard-form-radio">
+													<input name="familyProtect" id="radio2" type="radio" value="OFF">
+													<label for="radio2"> OFF</label>
+												</div>
+											</div>
+
+
+
+											<div class="form-group clearfix">
+												<a href="javascript:;"
+													class="form-wizard-previous-btn float-left">Previous</a>
+
+												<button type="submit"
+													class="form-wizard-next-btn float-left">Save</button>
+											</div>
+										</fieldset>
+									</form>
+								</div>
+							</div>
+
+							<div class="json_data">
+								<strong>Your JSON Data </strong>
+								<br />
+								<div id="demo"></div>
+
+							</div>
+							<div class="col-lg-12">
+
+								<div id="errorDiv" style="display:none">
+									<div class="alert alert-danger" role="alert"></div>
+								</div>
+
+
+
+
+								<div class="col-lg-12">
+
+
+								</div>
+
+
+
+							</div>
+
+
+
+
+						</div>
+
+
+
+
+					</div>
+
+
+
+					<style>
+						.main-box {
+							background: #E3E9F9;
+						}
+
+						.breadcrumb>li a {
+							color: #000000;
+						}
+
+						.breadcrumb>.active {
+							color: #000000;
+						}
+
+						/*.buttons{
+    padding-left: 30px;
+    background-color: red;
+}*/
+						.buttonStyling {
+							color: #f5f5f5;
+							margin: 10px;
+						}
+
+						#buttons :first-child {
+							float: none;
+						}
+
+						#buttons :nth-child(2) {
+							float: none
+						}
+
+						#buttons {
+							text-align: center;
+						}
+
+						.sdealert {
+							padding: 5px;
+							display: none;
+						}
+
+						.sdealertText {
+							text-align: center;
+							color: red;
+						}
+
+						.otlogin {
+							background-color: #03a9f4 !important;
+						}
+
+						.otlogin:hover {
+							background-color: #0022ff !important;
+						}
+
+						.radioFont {
+							font-size: 15px;
+						}
+
+						.loading {
+							text-align: center;
+							display: none;
+						}
+
+						.animation {
+							font-size: 16px;
+							color: black;
+						}
+					</style>
+
+					<footer id="footer-bar" class="row">
+						<p id="footer-copyright" class="col-xs-12">
+							Powered by WhiteHAX
+						</p>
+					</footer>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- global scripts -->
+
+	<!--	<script src="/static/whlite/js/demo-skin-changer.js"></script>-->
+	<!-- only for demo -->
+
+	<!--	<script src="/static/whlite/js/demo.js"></script>-->
+	<!-- only for demo -->
+
+	<!-- theme scripts -->
+	<script src="js/scripts.js"></script>
+	<script src="js/pace.min.js"></script>
+
+
+	<style>
+		.switch {
+			position: relative;
+			display: inline-block;
+			width: 60px;
+			height: 34px;
+		}
+
+		.switch input {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		.slider {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #ccc;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		.slider:before {
+			position: absolute;
+			content: "";
+			height: 26px;
+			width: 26px;
+			left: 4px;
+			bottom: 4px;
+			background-color: white;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		input:checked+.slider {
+			background-color: #2196F3;
+		}
+
+		input:focus+.slider {
+			box-shadow: 0 0 1px #2196F3;
+		}
+
+		input:checked+.slider:before {
+			-webkit-transform: translateX(26px);
+			-ms-transform: translateX(26px);
+			transform: translateX(26px);
+		}
+
+		/* Rounded sliders */
+		.slider.round {
+			border-radius: 34px;
+		}
+
+		.slider.round:before {
+			border-radius: 50%;
+		}
+	</style>
+
+	<script>
+		jQuery(document).ready(function () {
+			// click on next button
+			jQuery('.form-wizard-next-btn').click(function () {
+				var parentFieldset = jQuery(this).parents('.wizard-fieldset');
+				var currentActiveStep = jQuery(this).parents('.form-wizard').find('.form-wizard-steps .active');
+				var next = jQuery(this);
+				var nextWizardStep = true;
+				parentFieldset.find('.wizard-required').each(function () {
+					var thisValue = jQuery(this).val();
+
+					if (thisValue == "") {
+						jQuery(this).siblings(".wizard-form-error").slideDown();
+						nextWizardStep = false;
+					}
+					else {
+						jQuery(this).siblings(".wizard-form-error").slideUp();
+					}
+				});
+				if (nextWizardStep) {
+					next.parents('.wizard-fieldset').removeClass("show", "400");
+					currentActiveStep.removeClass('active').addClass('activated').next().addClass('active', "400");
+					next.parents('.wizard-fieldset').next('.wizard-fieldset').addClass("show", "400");
+					jQuery(document).find('.wizard-fieldset').each(function () {
+						if (jQuery(this).hasClass('show')) {
+							var formAtrr = jQuery(this).attr('data-tab-content');
+							jQuery(document).find('.form-wizard-steps .form-wizard-step-item').each(function () {
+								if (jQuery(this).attr('data-attr') == formAtrr) {
+									jQuery(this).addClass('active');
+									var innerWidth = jQuery(this).innerWidth();
+									var position = jQuery(this).position();
+									jQuery(document).find('.form-wizard-step-move').css({ "left": position.left, "width": innerWidth });
+								} else {
+									jQuery(this).removeClass('active');
+								}
+							});
+						}
+					});
+				}
+			});
+			//click on previous button
+			jQuery('.form-wizard-previous-btn').click(function () {
+				var counter = parseInt(jQuery(".wizard-counter").text());;
+				var prev = jQuery(this);
+				var currentActiveStep = jQuery(this).parents('.form-wizard').find('.form-wizard-steps .active');
+				prev.parents('.wizard-fieldset').removeClass("show", "400");
+				prev.parents('.wizard-fieldset').prev('.wizard-fieldset').addClass("show", "400");
+				currentActiveStep.removeClass('active').prev().removeClass('activated').addClass('active', "400");
+				jQuery(document).find('.wizard-fieldset').each(function () {
+					if (jQuery(this).hasClass('show')) {
+						var formAtrr = jQuery(this).attr('data-tab-content');
+						jQuery(document).find('.form-wizard-steps .form-wizard-step-item').each(function () {
+							if (jQuery(this).attr('data-attr') == formAtrr) {
+								jQuery(this).addClass('active');
+								var innerWidth = jQuery(this).innerWidth();
+								var position = jQuery(this).position();
+								jQuery(document).find('.form-wizard-step-move').css({ "left": position.left, "width": innerWidth });
+							} else {
+								jQuery(this).removeClass('active');
+							}
+						});
+					}
+				});
+			});
+			//click on form submit button
+			jQuery(document).on("click", ".form-wizard .form-wizard-submit", function () {
+				var parentFieldset = jQuery(this).parents('.wizard-fieldset');
+				var currentActiveStep = jQuery(this).parents('.form-wizard').find('.form-wizard-steps .active');
+				parentFieldset.find('.wizard-required').each(function () {
+					var thisValue = jQuery(this).val();
+					if (thisValue == "") {
+						jQuery(this).siblings(".wizard-form-error").slideDown();
+					}
+					else {
+						jQuery(this).siblings(".wizard-form-error").slideUp();
+					}
+				});
+			});
+			// focus on input field check empty or not
+			jQuery(".form-control").on('focus', function () {
+				var tmpThis = jQuery(this).val();
+				if (tmpThis == '') {
+					jQuery(this).parent().addClass("focus-input");
+				}
+				else if (tmpThis != '') {
+					jQuery(this).parent().addClass("focus-input");
+				}
+			}).on('blur', function () {
+				var tmpThis = jQuery(this).val();
+				if (tmpThis == '') {
+					jQuery(this).parent().removeClass("focus-input");
+					jQuery(this).siblings('.wizard-form-error').slideDown("3000");
+				}
+				else if (tmpThis != '') {
+					jQuery(this).parent().addClass("focus-input");
+					jQuery(this).siblings('.wizard-form-error').slideUp("3000");
+				}
+			});
+		});
+
+
+	</script>
+
+	<script>
+		// get the form element from dom
+		const formElement = document.querySelector('form#forms')
+
+		// convert the form to JSON
+		const getFormJSON = (form) => {
+			const data = new FormData(form);
+			return Array.from(data.keys()).reduce((result, key) => {
+				if (result[key]) {
+					result[key] = data.getAll(key)
+					return result
+				}
+				result[key] = data.get(key);
+				return result;
+			}, {});
+		};
+
+		// handle the form submission event, prevent default form behaviour, check validity, convert form to JSON
+		const handler = (event) => {
+			event.preventDefault();
+			const valid = formElement.reportValidity();
+			if (valid) {
+				const result = getFormJSON(formElement);
+				// handle one, multiple or no files uploaded
+				//const images = [result.images].flat().filter((file) => !!file.name)
+				// handle one, multiple or no languages selected
+				const periodicNotification = [result.periodicNotification || []].flat();
+				const periodicRepeat = [result.periodicRepeat || []].flat();
+				const smartdNotification = [result.smartdNotification || []].flat();
+				const smartdRepeat = [result.smartdRepeat || []].flat();
+				const vpnManager = [result.vpnManager || []].flat();
+				const phishingFilter = [result.phishingFilter || []].flat();
+				const useInteraction = [result.useInteraction || []].flat();
+				const familyProtect = [result.familyProtect || []].flat();
+				const prof = result.profileName;
+				const pt = result.periodicTime;
+				const st = result.smartdTime;
+			
+
+				// convert the checkbox to a boolean
+				//const isHappyReader = !!(result.isHappyReader && result.isHappyReader === 'on')
+
+				// use spread function, but override the keys we've made changes to
+				/*const output = {
+					...result,
+					periodicNotification,
+					periodicRepeat,
+					smartdNotification,
+					smartdRepeat,
+					vpnManager,
+					phishingFilter,
+					useInteraction,
+					familyProtect
+
+				}*/
+
+
+				const OUTPUT = {
+				
+					"info": {
+						"profileInfo": {
+							"name": prof,
+							"id": "1842184946"
+						},
+						"groupInfo": {
+							"name": "myContext.GroupNameValue",
+							"id": "(Math.floor(Math.random() * 9000000000) + 1000000000).toString()",
+							"devices": [
+								{
+									"username": "user1",
+									"deviceName": "deviceName1",
+									"deviceOS": "deviceOS1"
+								},
+								{
+									"username": "user2",
+									"deviceName": "deviceName2",
+									"deviceOS": "deviceOS2"
+								}
+							]
+						},
+						"adminInfo": {
+							"username": "admin's user name",
+							"deviceName": "admin's device name",
+							"deviceOS": "admin device's os"
+						},
+						"PeriodicTime" : pt,
+                        "SmartDeviceTime" : st,							
+					},
+				
+					
+					"config": {
+						"activeProtection": {
+							"vpnManager": {
+								"status": result.vpnManager == "ON" ? true : false,
+								"userInteraction": result.useInteraction == "ON" ? true : false
+							},
+							"phishingFilter": {
+								"status": result.phishingFilter == "ON" ? true : false,
+								"userInteraction": result.useInteraction == "ON" ? true : false
+							},
+							"familyProtect": {
+								"inappropriateContent": {
+									"status": result.familyProtect == "ON" ? true : false,
+									"userInteraction": result.useInteraction == "ON" ? true : false
+								},
+								"socialMedia": {
+									"status": result.familyProtect == "ON" ? true : false,
+									"userInteraction": result.useInteraction == "ON" ? true : false
+								},
+								"videoStreaming": {
+									"status": result.familyProtect == "ON" ? true : false,
+									"userInteraction": result.useInteraction == "ON" ? true : false
+								},
+								"gaming": {
+									"status": result.familyProtect == "ON" ? true : false,
+									"userInteraction": result.useInteraction == "ON" ? true : false
+								},
+								"pornContent": {
+									"status": result.familyProtect == "ON" ? true : false,
+									"userInteraction": result.useInteraction == "ON" ? true : false
+								}
+							}
+						},
+						"riskVerfication": {
+							"deviceSecurity": {
+								"userInteraction": true,
+								"timePeriod": {
+									"status": true,
+									"timestamp": 1669189227527,
+									"interval": 100
+								}
+							},
+							"wifiSecurity": {
+								"status": true,
+								"userInteraction": true
+							},
+							"smartDeviceScan": {
+								"userInteraction": true,
+								"timePeriod": {
+									"status": true,
+									"timestamp": 1669189227527,
+									"interval": 100
+								}
+							},
+							"passwordManager": {}
+						}
+						
+						
+						
+					}
+					
+					
+					
+					
+				}
+
+
+
+	const myJson = JSON.stringify(OUTPUT);
+document.getElementById("demo").innerHTML = myJson;
+
+const textToBLOB = new Blob([myJson], { type: 'text/plain' });
+      const sFileName = 'formData.txt';	   // The file to save the data.
+
+      let newLink = document.createElement("a");
+      newLink.download = sFileName;
+
+      if (window.webkitURL != null) {
+        newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+      }
+      else {
+        newLink.href = window.URL.createObjectURL(textToBLOB);
+        newLink.style.display = "none";
+        document.body.appendChild(newLink);
+      }
+
+      newLink.click(); 
+
+        console.log(output);
+		
+		
+		
+		
+      }
+
+    }
+
+
+
+
+			
+
+		formElement.addEventListener("submit", handler)
+
+
+	</script>
+
+</body>
+
+</html>
