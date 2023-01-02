@@ -479,7 +479,7 @@
 	   }).then((objectData) => { 
 	  
 	   let tableData="";
-	   objectData.map((values) => {
+	   objectData(){
 	   tableData = `<img src= "${values.image}" />`; 
 	   });
 	   document.getElementById("table_body").innerHTML = tableData;
