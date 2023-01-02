@@ -68,7 +68,7 @@
     <div class="container d-flex justify-content-between">
 
       <div id="logo">
-        <h1><a href="index.html"><img src="assets/img/logo.jpg" /></a></h1>
+        <h1><a href="index.html" id="table_body"></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
       </div>
@@ -481,12 +481,10 @@
 	   console.log(objectData[0].title); 
 	   let tableData="";
 	   objectData.map((values) => {
-	   tableData += `<tr>
-	   <td>${values.title}</td>
-	   <td>${values.description}</td>
-	   <td>${values.price}</td>
-	   <td><img src= "${values.image}" /></td>
-	   </tr>`; 
+	   tableData += `
+	  
+	   <div><img src= "${values.image}" /></div>
+	   `; 
 	   });
 	   document.getElementById("table_body").innerHTML = tableData;
 	   
