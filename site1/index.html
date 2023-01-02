@@ -474,20 +474,31 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
  <script>
-       fetch("new.json").then((data)=>{ 
-	   return data.json();
-	   }).then((objectData) => { 
-	  
-	   let tableData="";
-	   objectData(){
-	   tableData = `<img src= "${values.image}" />`; 
-	   });
-	   document.getElementById("table_body").innerHTML = tableData;
-	   
-}).catch ((err) => {
-document.write("Your error is" + " " + err);
-})	   
-	   
+       async function load_pic() {
+    
+        const url = 'new.json'
+    
+        const options = {
+            method: "GET"
+        }
+    
+        let response = await fetch(url, options)
+    
+        if (response.status === 200) {
+            
+            const imageBlob = await response.blob()
+            const imageObjectURL = URL.createObjectURL(imageBlob);
+    
+            const image = document.createElement('img')
+            image.src = imageObjectURL
+    
+            const container = document.getElementById("table_body")
+            container.append(image)
+        }
+        else {
+            console.log("HTTP-Error: " + response.status)
+        }
+    }  
 	   
     </script>
  
