@@ -473,7 +473,23 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/js/main.js"></script>
-
+ <script>
+       fetch("new.json").then((data)=>{ // console.log(data); json format
+	   return data.json();
+	   }).then((objectData) => { 
+	   console.log(objectData[0].title); 
+	   let tableData="";
+	   objectData.map((values) => {
+	   tableData += `<img src= "${values.image}" />`; 
+	   });
+	   document.getElementById("table_body").innerHTML = tableData;
+	   
+}).catch ((err) => {
+document.write("Your error is" + " " + err);
+})	   
+	   
+	   
+    </script>
  
   
 
