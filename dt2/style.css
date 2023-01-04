@@ -38,7 +38,7 @@ body{position:relative; background:url("img/bg12.gif");}
     left: 48%;
 }
 
-@media (max-width:667px) {
+@media (max-width:999px) {
 	
 	.tree_img{ width:100%; }
 	.dollar_n img {width: 60%;}  .dollar_n1 img {width: 60%; }   .dollar_n2 img {width: 60%;} 
