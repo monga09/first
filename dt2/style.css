@@ -1,0 +1,76 @@
+body{position:relative; background:url("img/bg12.gif");}
+
+.tree{ display: block;
+    margin: 0px auto;
+    text-align: center;}
+	
+	
+	.dollar_n {
+    position: absolute;
+    top: 50%;
+    left: 39%;
+}
+
+
+
+.dollar_n1 {
+    position: absolute;
+    top: 50%;
+    left: 49%;
+}
+
+
+	.dollar_n2 {
+    position: absolute;
+    top: 50%;
+    right: 40%;
+}
+
+.chest {
+  position: absolute;
+    top: 58%;
+    left: 41%;
+}
+
+.chest12 {
+  position: absolute;
+    top: 68%;
+    left: 48%;
+}
+
+@media (max-width:667px) {
+	
+	.tree_img{ width:100%; }
+	.dollar_n img {width: 60%;}  .dollar_n1 img {width: 60%; }   .dollar_n2 img {width: 60%;} 
+	.dollar_n1 {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+}
+.dollar_n {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+}
+
+.dollar_n2 {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+}
+
+.chest12 img {width: 80%;} .chest img {width: 80%;}
+.chest12 {
+    position: absolute;
+    top: 69%;
+    left: 39%;
+}
+.chest {
+    position: absolute;
+    top: 58%;
+    left: 11%;
+}
+
+	
+	
+}
