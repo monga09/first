@@ -38,7 +38,7 @@ body{position:relative; background:url("img/bg12.gif");}
     left: 48%;
 }
 
-@media (max-width:999px) {
+@media (min-width:0px) and (max-width:500px) {
 	
 	.tree_img{ width:100%; }
 	.dollar_n img {width: 60%;}  .dollar_n1 img {width: 60%; }   .dollar_n2 img {width: 60%;} 
@@ -69,6 +69,43 @@ body{position:relative; background:url("img/bg12.gif");}
     position: absolute;
     top: 58%;
     left: 11%;
+}
+
+	
+	
+}
+
+@media (min-width:501px) and (max-width:1100px) {
+	
+	.tree_img{ width:100%; }
+	.dollar_n img {width: 60%;}  .dollar_n1 img {width: 60%; }   .dollar_n2 img {width: 60%;} 
+	.dollar_n1 {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+}
+.dollar_n {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+}
+
+.dollar_n2 {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+}
+
+.chest12 img {width: 80%;} .chest img {width: 80%;}
+.chest12 {
+    position: absolute;
+  top: 74%;
+    left: 52%;
+}
+.chest {
+     position: absolute;
+    top: 70%;
+    left: 36%;
 }
 
 	
